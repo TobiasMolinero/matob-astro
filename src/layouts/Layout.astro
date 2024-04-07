@@ -1,7 +1,9 @@
 ---
+import Header from "../components/Header.astro";
+
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
@@ -9,44 +11,132 @@ const { title, description } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/public/matob_icono.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/bootstrap-icons/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <Header />
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    font-size: 10px;
+    scroll-behavior: smooth;
+    --color-primary: #003e42;
+    --color-secondary: #98fb98;
+    --green-wsp: #25d366;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .font-size-2 {
+    font-size: 1.2rem;
+  }
+
+  .font-size-3 {
+    font-size: 1.3rem;
+  }
+
+  .font-size-4 {
+    font-size: 1.4rem;
+  }
+
+  .font-size-5 {
+    font-size: 1.5rem;
+  }
+
+  .font-size-6 {
+    font-size: 1.6rem;
+  }
+
+  .font-size-7 {
+    font-size: 1.7rem;
+  }
+
+  .font-size-8 {
+    font-size: 1.8rem;
+  }
+
+  .font-size-9 {
+    font-size: 1.9rem;
+  }
+
+  .font-size-10 {
+    font-size: 2rem;
+  }
+
+  .font-size-11 {
+    font-size: 2.1rem;
+  }
+
+  .font-size-12 {
+    font-size: 2.2rem;
+  }
+
+  .font-size-13 {
+    font-size: 2.3rem;
+  }
+
+  .font-size-14 {
+    font-size: 2.4rem;
+  }
+
+  .font-size-15 {
+    font-size: 2.5rem;
+  }
+
+  .font-size-16 {
+    font-size: 2.6rem;
+  }
+
+  .bold-100 {
+    font-weight: 100;
+  }
+
+  .bold-200 {
+    font-weight: 200;
+  }
+
+  .bold-300 {
+    font-weight: 300;
+  }
+
+  .bold-400 {
+    font-weight: 400;
+  }
+
+  .bold-500 {
+    font-weight: 500;
+  }
+
+  .bold-600 {
+    font-weight: 600;
+  }
+
+  .bold-700 {
+    font-weight: 700;
+  }
+
+  .bold-800 {
+    font-weight: 800;
+  }
+
+  .bold-900 {
+    font-weight: 900;
+  }
 </style>

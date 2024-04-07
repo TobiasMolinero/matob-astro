@@ -1,0 +1,94 @@
+---
+import CardService from "../cards/CardService.astro";
+import iconoConsultoriaYGestion from "/public/icono-consultoria-y-gestion.png";
+import iconoGestionComercial from "/public/icono-gestion-comercial.png";
+import iconoDiseñoWeb from "/public/icono-diseño-web.png";
+---
+
+<section class="servicios">
+  <div class="intro-servicios">
+    <h2 class="titulo-servicios font-size-14 bold-700">
+      SERVICIOS DE CONSULTORÍA
+    </h2>
+    <h2 class="subtitulo-servicios">
+      ¿Que podemos hacer para que tu negocio crezca?
+    </h2>
+    <p class="texto-servicios font-size-5 bold-500">
+      Potenciamos tus fortalezas, encontramos nuevas oportunidades, combatimos
+      amenazas y te ayudamos a mejorar tus debilidades.
+    </p>
+  </div>
+  <div class="container-items-servicios">
+    <div class="items-servicios">
+      <CardService
+        href=""
+        src={iconoConsultoriaYGestion.src}
+        alt="Icono de servicio de consultoría y gestión"
+        text="Consultoría y gestión"
+      />
+      <CardService
+        href=""
+        src={iconoGestionComercial.src}
+        alt="Icono de gestión comercial"
+        text="Gestión comercial"
+      />
+      <CardService
+        href=""
+        src={iconoDiseñoWeb.src}
+        alt="Icono de diseño y desarrollo web"
+        text="Diseño/Desarrollo web"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .servicios {
+    padding: 80px 15px;
+    background: #e4e4e4;
+  }
+
+  .intro-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .titulo-servicios,
+  .subtitulo-servicios,
+  .texto-servicios {
+    text-align: center;
+  }
+
+  .titulo-servicios {
+    color: var(--color-primary);
+  }
+
+  .subtitulo-servicios {
+    font-size: 3.4rem;
+  }
+
+  .texto-servicios {
+    padding: 5px 0 0 0;
+    color: #646464;
+  }
+
+  /* ITEMS */
+
+  .container-items-servicios {
+    margin: 40px 0;
+  }
+
+  .items-servicios {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  @media screen and (max-width: 768px){
+    .items-servicios{
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+</style>

@@ -1,0 +1,57 @@
+---
+interface Props {
+    href: string
+    src: string
+    alt:string
+    text: string
+}
+
+const {href, src, alt, text} = Astro.props;
+---
+
+<div class="item">
+    <a href="">
+        <img class="item-icon" src={src} alt={alt}>
+    </a>
+    <a href="">
+        <p class="bold-600">{text}</p>
+    </a>
+</div>
+
+<style>
+    .item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .item-icon{
+        width: 100px;
+        transition: 0.3s;
+    }
+
+    .item-icon:hover{
+        scale: 1.1;
+    }
+
+    .item > a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .item a p{
+        font-size: 1.6rem;
+    }   
+
+    @media screen and (max-width: 768px){
+
+    .item .item-icon{
+        width: 150px;
+    }
+
+    .item a p{
+        font-size: 2rem;
+    }
+}
+</style>

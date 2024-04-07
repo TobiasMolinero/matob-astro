@@ -1,0 +1,114 @@
+---
+interface Props{
+    title: string;
+    subtitle: string;
+    showAnchor: boolean;
+}
+
+const {title, subtitle, showAnchor} = Astro.props;
+---
+
+<section class="banner">
+    <div class="background-overlay">
+        <div class="content-banner">
+            <h1>{title}</h1>
+            <h2 class="font-size-15 bold-500">{subtitle}</h2>
+            {showAnchor ? 
+                <a href="">
+                    <button class="button">Conversemos</button>
+                </a>
+            :
+                ''
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .banner{
+    width: 100%;
+    height: 400px;
+    background-image: url('/public/banner-inicio.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+.background-overlay{
+    height: 100%;
+    background-color: #003e42dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-banner{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.content-banner h1{
+    font-size: 4.3rem;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.content-banner h2{
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.content-banner button{
+    margin: 20px auto;
+    display: block;
+    padding: 15px 30px;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s
+}
+
+.content-banner a{
+    text-decoration: none;
+}
+
+.banner button:hover{
+    transform: scale(1.1)
+}
+
+.button{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width:767px){
+
+    .banner{
+        background-attachment: initial;
+    }
+
+    .content-banner h1{
+        font-size: 2.8rem;
+    }
+
+    .content-banner h2{
+        font-size: 1.8rem;
+    }
+
+    .banner button:hover{
+        transform: scale(1)
+    }
+}
+
+</style>
