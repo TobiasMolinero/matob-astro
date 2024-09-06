@@ -1,0 +1,5 @@
+#003e42 --> verde oscuro
+#98fb98 --> verde claro
+#ddffdd --> verde mas claro
+#fefefe --> blanco
+#1a1a1 --> negro
