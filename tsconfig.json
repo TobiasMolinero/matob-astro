@@ -1,3 +1,10 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+    "baseUrl": ".", // Esto establece la base como la raíz del proyecto
+    "paths": {
+      "@lib": ["src/lib/modul.ts"],
+      "@components": ["src/components/modul.ts"]
+    }
+  }
 }

@@ -32,7 +32,7 @@
   scroll-behavior: smooth;
   --title: rgb(0, 62, 66);
   --bg-title: rgb(227, 255, 227);
-  --text: #1a1a1a;
+  --text: rgb(68, 68, 68);
   --background: #fefefe; 
 }
 

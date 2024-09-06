@@ -1,0 +1,76 @@
+---
+import { logo_white } from '@lib'
+---
+
+<header class="header">
+    <div class="container-logo">
+        <img class="logo" src={logo_white.src} alt="Logo de matob">
+    </div>
+    <nav class="nav">
+        <ul class="menu-nav">
+            <li class="menu-item">
+                <a class="menu-item_link" href="#">
+                    Servicios
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-item_link" href="#">
+                    Nosotros
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-item_link" href="#">
+                    Contacto
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<style>
+    .header{
+        position: relative;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-logo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 180px;
+    }
+
+    .logo{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .nav{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-nav{
+        list-style: none;
+        display: flex;
+        column-gap: 40px;
+    }
+
+    .menu-item:hover .menu-item_link{
+        text-shadow: 0px 0px 1px var(--title);
+    }
+
+    .menu-item_link{
+        color: var(--title);
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    @media screen and (max-width: ) and (min-width: 375px){}
+</style>
