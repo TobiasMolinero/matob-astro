@@ -8,6 +8,9 @@ import logo_green from './images/logo_fondo_verde.webp'
 import hero_image from './images/hero-image.webp'
 import pros_image from './images/foto-acuerdo.webp'
 import contact_image from './images/foto-seccion-contacto.webp'
+import Button from './Button.astro'
+import ServiceCard from './cards/ServiceCard.astro'
+import TitleCard from './cards/TitleCard.astro'
 
 export {
   icon_gear,
@@ -20,4 +23,7 @@ export {
   hero_image,
   pros_image,
   contact_image,
+  Button,
+  ServiceCard,
+  TitleCard,
 }

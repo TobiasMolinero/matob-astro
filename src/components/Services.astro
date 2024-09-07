@@ -1,0 +1,42 @@
+---
+import { TitleCard, ServiceCard, icon_gear, icon_analisis, icon_web } from '@lib';
+---
+
+<section class="services">
+    <TitleCard title='Nuestros Servicios' side='left'/>
+    <div class="cards">
+        <ServiceCard 
+            src={icon_gear.src} 
+            alt='Icono servicio de sistemas de gestión' 
+            title='Sistemas de gestión' 
+            text='Ofrecemos soluciones personalizadas en Excel para optimizar y automatizar tus procesos de trabajo. Nos aseguramos de que tu gestión y toma de decisiones se vuelva más eficiente.'/>
+        <ServiceCard 
+            src={icon_analisis.src}
+            alt='Icono servicio de analisis'
+            title='Análisis de datos'
+            text='Utilizamos herramientas y tecnicas estadisticas para interpretar datos, identificar tendencias y patrones, y generar informes detallados que te ayudaran en la toma de decisiones.'
+        />
+        <ServiceCard 
+            src={icon_web.src}
+            alt="Icono servicio de desarollo de páginas web"
+            title='Diseño y desarrollo web'
+            text='Impulsamos tu presencia online a traves de sitios web atractivos, funcionales y con una experiencia de usuario agradable. Nos aseguramos que tu sitio web refleje la identidad de tu marca.'
+        />
+    </div>
+</section>
+
+<style>
+    .services{
+        padding: 40px;
+        display: flex;
+        column-gap: 20px;
+    }
+    .cards{
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 15px;
+    }
+
+
+</style>

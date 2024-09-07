@@ -1,0 +1,23 @@
+---
+import { hero_image } from "@lib";
+---
+
+<div class="container-img" >
+    <img class="img" src={hero_image.src} alt="Imagen representativa de graficos de barra y estadisticas.">
+    <div class="over-layout"></div>
+</div>
+
+<!-- clip-path: ellipse(63% 53% at 90% 57%); -->
+
+<style>
+    .container-img{
+        background-color: rgb(0, 62, 66, 60%);
+        height: 100%;
+        clip-path: ellipse(100% 100% at 104% 95%);
+    }
+    .img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>

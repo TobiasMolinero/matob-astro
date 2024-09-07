@@ -1,5 +1,6 @@
 ---
-
+import { HeroImg } from '@components'
+import { Button } from '@lib'
 ---
 
 <section class="hero">
@@ -7,18 +8,19 @@
         <h1 class="title">Impulsá tu negocio al siguiente nivel!</h1>
         <p class="text">Optimizamos tu negocio con sistemas de gestión hechos en excel, y a la medida de tus necesidades. Soluciones eficaces para empresas pequeñas que buscan crecer.</p>
         <div class="container-button">
-            <button class="button">Quiero saber más</button>
+            <Button > Quiero saber más!</Button>
+            <!-- <button class="button">Quiero saber más</button> -->
         </div>
     </div>
-    <div>
-
+    <div class="hero-img">
+        <HeroImg/>
     </div>
 </section>
 
 <style>
     .hero{
-        height: calc(100vh - 80px);
-        padding: 0 40px;
+        height: calc(100vh - 100px);
+        padding-left: 40px;
         display: flex;
     }
 
@@ -38,6 +40,9 @@
         color: var(--title);
         font-weight: 900;
         font-size: 60px;
+        @media (max-width: 512px) {
+            font-size: 50px;   
+        }
     }
 
     .text{
@@ -49,10 +54,47 @@
     }
 
     .container-button{
-
+        width: 80%;
+        height: 45px;
     }
     
-    .button{
+    .hero-img{
+        position: relative;
 
+    }
+
+    @media screen and (max-width: 1023px) {
+
+        .hero{
+            height: 100vh;
+            background-image: linear-gradient(
+                to bottom,
+                #fefefeb6,
+                #fefefeb6,
+                #fefefedc,
+                #fefefe
+                ),
+                url('/src/lib/images/banner_nos_1.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            padding-top: 150px;
+        }
+
+        .title{
+            font-size: 55x;
+            text-align: center;
+        }
+
+        .hero-img{display: none}
     }
 </style>
