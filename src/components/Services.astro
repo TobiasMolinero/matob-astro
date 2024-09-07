@@ -27,7 +27,7 @@ import { TitleCard, ServiceCard, icon_gear, icon_analisis, icon_web } from '@lib
 
 <style>
     .services{
-        padding: 40px;
+        padding: 20px;
         display: flex;
         column-gap: 20px;
     }
@@ -38,5 +38,19 @@ import { TitleCard, ServiceCard, icon_gear, icon_analisis, icon_web } from '@lib
         column-gap: 15px;
     }
 
+    @media screen and (max-width: 1023px){
+        .services{
+            padding: 40px 0;
+            flex-direction: column;
+            row-gap: 20px
+        }
+
+        .cards{
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+    }
 
 </style>

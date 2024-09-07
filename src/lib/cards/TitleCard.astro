@@ -21,7 +21,7 @@ const { title, side } = Astro.props
         align-items: end;
         padding: 15px;
         border-radius: 10px;
-        box-shadow: var(--shadow-md);
+        box-shadow: var(--shadow);
     }
 
     .title{
@@ -31,4 +31,23 @@ const { title, side } = Astro.props
     }
     .left{text-align: end;}
     .right{text-align: start}
+
+
+    @media screen and (max-width: 1023px){
+        .container{
+            height: 80px;
+            width: 60%;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .title{
+            font-size: 30px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .container{
+            width: 80%;
+        }
+    }
 </style>
