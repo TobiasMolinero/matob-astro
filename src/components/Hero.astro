@@ -4,7 +4,7 @@ import { Button } from '@lib'
 ---
 
 <section class="hero">
-    <div class="content">
+    <div class="content" transition:animate="fade">
         <h1 class="title">Impulsá tu negocio al siguiente nivel!</h1>
         <p class="text">Optimizamos tu negocio con sistemas de gestión hechos en excel, y a la medida de tus necesidades. Soluciones eficaces para empresas pequeñas que buscan crecer.</p>
         <div class="container-button">
@@ -19,7 +19,8 @@ import { Button } from '@lib'
 
 <style>
     .hero{
-        height: calc(100vh - 100px);
+        height: calc(100vh - 60px);
+        width: 100%;
         padding-left: 40px;
         display: flex;
     }
@@ -66,7 +67,7 @@ import { Button } from '@lib'
     @media screen and (max-width: 1023px) {
 
         .hero{
-            height: 100vh;
+            height: calc(100vh - 60px);
             background-image: linear-gradient(
                 to bottom,
                 #fefefeb6,

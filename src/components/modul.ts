@@ -5,6 +5,7 @@ import Services from './Services.astro'
 import Pros from './Pros.astro'
 import Contact from './Contact.astro'
 import DropDownNav from './DropDownNav.astro'
+import Footer from './Footer.astro'
 
 export {
     Header,
@@ -14,4 +15,5 @@ export {
     Pros,
     Contact,
     DropDownNav,
+    Footer,
 }
