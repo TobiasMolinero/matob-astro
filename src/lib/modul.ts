@@ -3,6 +3,8 @@ import icon_analisis from './icons/analisis-de-datos.webp'
 import icon_web from './icons/diseño_web.webp'
 import icon_check_green from './icons/icon-check-green.webp'
 import icon_check_blue from './icons/icon-check-blue.webp'
+import IconHamburguer from './icons/IconHamburguer.astro'
+import IconClose from './icons/IconClose.astro'
 import logo_white from './images/logo_fondo_blanco.webp'
 import logo_green from './images/logo_fondo_verde.webp'
 import hero_image from './images/hero-image.webp'
@@ -26,4 +28,6 @@ export {
   Button,
   ServiceCard,
   TitleCard,
+  IconHamburguer,
+  IconClose,
 }

@@ -4,6 +4,7 @@ import HeroImg from './HeroImg.astro'
 import Services from './Services.astro'
 import Pros from './Pros.astro'
 import Contact from './Contact.astro'
+import DropDownNav from './DropDownNav.astro'
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     HeroImg,
     Services, 
     Pros,
-    Contact
+    Contact,
+    DropDownNav,
 }

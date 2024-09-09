@@ -1,5 +1,6 @@
 ---
 import { logo_white } from '@lib'
+import { DropDownNav } from '@components';
 ---
 
 <header class="header">
@@ -9,22 +10,23 @@ import { logo_white } from '@lib'
     <nav class="nav">
         <ul class="menu-nav">
             <li class="menu-item">
-                <a class="menu-item_link" href="#">
+                <a class="menu-item_link" href="#servicios">
                     Servicios
                 </a>
             </li>
             <li class="menu-item">
-                <a class="menu-item_link" href="#">
+                <a class="menu-item_link" href="#nosotros">
                     Nosotros
                 </a>
             </li>
             <li class="menu-item">
-                <a class="menu-item_link" href="#">
+                <a class="menu-item_link" href="#contacto">
                     Contacto
                 </a>
             </li>
         </ul>
     </nav>
+    <DropDownNav />
 </header>
 
 <style>
@@ -73,8 +75,15 @@ import { logo_white } from '@lib'
     }
 
     @media screen and (max-width: 1023px){
+
+        .header{
+            justify-content: end;
+            padding: 0 20px;
+        }
+
         .nav{
             display: none;
         }
+
     }
 </style>

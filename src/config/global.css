@@ -34,7 +34,7 @@
   scrollbar-color: var(--bg-button) transparent;
   --title: rgb(0, 62, 66);
   --bg-button: rgb(227, 255, 227);
-  --text: rgb(85, 85, 85);
+  --text: rgb(110, 110, 110);
   --background: #fefefe; 
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); 

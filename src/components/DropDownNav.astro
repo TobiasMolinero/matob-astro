@@ -1,0 +1,136 @@
+---
+import { IconClose, IconHamburguer } from "@lib";
+---
+
+<script>
+    const navDropdown: any = document.getElementById('navDropdown')
+    const buttonOpen: any = document.getElementById('buttonOpen')
+    const buttonClose: any = document.getElementById('buttonClose')
+
+    let isOpen: boolean = false
+
+    buttonOpen.addEventListener('click', () => {
+        navDropdown.classList.remove('close')
+        navDropdown.classList.add('nav-dropdown')
+        isOpen = true
+    })
+
+    buttonClose.addEventListener('click', () => {
+        navDropdown.classList.remove('nav-dropdown')
+        navDropdown.classList.add('close')
+        isOpen = false
+    })
+    
+</script>
+
+<button class="container-icon-menu" class="button-open" id="buttonOpen">
+    <IconHamburguer width='32px' height='32px' fill='#003E42' /> 
+</button>
+
+<nav class='close' id="navDropdown">
+    <div class="container-button">
+        <button class="button-close" id="buttonClose">
+            <IconClose width="32px" height="32px" fill="#fefefe" />
+        </button>
+    </div>
+    <ul class="menu">
+        <li class="menu-item">
+            <a class="link" href="#servicios">Servicios</a>
+        </li>
+        <li class="menu-item">
+            <a class="link" href="#nosotros">Nosotros</a>
+        </li>
+        <li class="menu-item">
+            <a class="link" href="#contacto">Contacto</a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+
+    .container-icon-menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .button-open:focus-within{
+        background: transparent;
+    }
+
+    .nav-dropdown{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--title);
+        display: flex;
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    .close{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        background: var(--title);
+        transition: 0.3s;
+        transform: translateY(-500px);
+    }
+
+    .container-button{
+        display: flex;
+        justify-content: end;
+    }
+
+    .button-close{
+        background: transparent;
+        padding: 10px;
+        border: none
+    }
+    
+    .menu{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+    }
+
+    .menu-item{
+        font-weight: 700;
+    }
+
+    .link{
+        text-decoration: none;
+        color: var(--background)
+    }
+
+    @media screen and (min-width: 1024px){
+
+        .container-icon-menu{
+            display: none;
+        }
+
+        .nav-dropdown{
+            display: none;
+        }
+    }
+
+    @keyframes openNav {
+        from{
+            height: 0;
+        }
+        to{
+            height: 100vh;
+        }
+    }
+</style>
