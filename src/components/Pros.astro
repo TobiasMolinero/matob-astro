@@ -1,0 +1,127 @@
+---
+import { TitleCard, icon_check_blue, pros_image } from "@lib";
+---
+
+<section class="pros" id="nosotros">
+    <TitleCard title='¿Por qué Matob?' side='right'/>
+    <div class="card">
+        <div class="container-image">
+            <div class="overlay-image"></div>
+            <div class="detail"></div>
+            <img class="image" src={pros_image.src} alt="Foto de la card de lista de ventajas">
+        </div>
+        <div class="container-list">
+            <ul class="list">
+                <li class="list-item">
+                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
+                    Optimizamos tu tiempo agilizando y automatizando las tareas y procesos de tu negocio.
+                </li>
+                <li class="list-item">
+                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos corporis minima, sunt similique illo quod temporibus placeat 
+                </li>
+                <li class="list-item">
+                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos corporis minima, sunt similique illo quod temporibus placeat 
+                </li>
+                <li class="list-item">
+                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos corporis minima, sunt similique illo quod temporibus placeat 
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pros{
+        max-width: 1480px;
+        margin-top: 40px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        column-gap: 20px;
+    }
+
+    .card{
+        flex: 1;
+        border-radius: 10px; 
+        box-shadow: var(--shadow);
+        display: flex;
+        height: 450px;
+    }
+
+    .container-image{
+        position: relative;
+        width: 60%;
+        height: 100%;
+        border-radius: 5px;
+    }
+    .detail{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 60%;
+        clip-path: ellipse(48% 67% at 99% 42%);
+        background-color: var(--background);
+    }
+    .overlay-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 62, 66, 60%);
+        border-radius: 5px;
+    }
+    .image{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .container-list{
+        padding: 50px 20px;
+    }
+    .list{ 
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 25px;
+    }
+    .list-item{
+        display: flex;
+        align-items: center;
+        column-gap: 15px;
+        color: var(--text);
+    }
+    .icon{
+        width: 20px;
+        height: 20px;
+    }
+
+    @media screen and (max-width: 1023px){
+        .pros{
+            padding: 40px 0;
+            flex-direction: column;
+            align-items: end;
+            row-gap: 20px; 
+        }
+
+        .card{
+            margin: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+        .container-image{
+            display: none;
+        }
+        .container-list{
+            padding: 20px 40px;
+        }
+    }
+
+</style>
