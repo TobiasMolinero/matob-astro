@@ -1,6 +1,7 @@
 import Header from './Header.astro'
 import Hero from './Hero.astro'
 import HeroImg from './HeroImg.astro'
+import FreeSheet from './FreeSheet.astro'
 import Services from './Services.astro'
 import Pros from './Pros.astro'
 import Contact from './Contact.astro'
@@ -11,6 +12,7 @@ export {
     Header,
     Hero,
     HeroImg,
+    FreeSheet,
     Services, 
     Pros,
     Contact,

@@ -1,0 +1,98 @@
+---
+---
+
+<section class="gift">
+    <div class="container">
+        <div class="content">
+            <h2>Un regalo de Matob!</h2>
+            <p>Descarga nuestra plantilla gratis para seguimiento de stock.</p>
+            <div class="container-image">
+                <div class="image"></div>
+            </div>
+            <a class="button" href="">La quiero!</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .gift{
+        width: 100%;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .container{
+        width: 50%;
+        max-width: 1480px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .content h2, .content p{
+        text-align: center;
+    }
+
+    h2{
+        color: var(--title);
+        font-weight: 700;
+        font-size: 35px
+    }
+    p{
+        color: var(--text);
+    }
+
+    .container-image{
+        height: 300px;
+        width: 100%;
+    }
+    
+    .image{
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            to bottom,
+            #fefefe,
+            #fefefe41,
+            #fefefe41,
+            #fefefe
+        ), url('/src/lib/images/fondo_plantilla_regalo.webp');
+        background-position: left center;
+        background-size: cover;
+    }
+
+    .button{
+        margin-top: 15px;
+        background-color: var(--bg-button);
+        padding: 15px 0;
+        border-radius: 10px;
+        box-shadow: var(--shadow-md);
+        color: var(--title);
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.2s
+    }
+    .button:hover{
+        background: var(--title);
+        color: var(--bg-button);
+    }
+    .button:active{
+        background: rgb(0, 62, 68);
+        box-shadow: var(--inner-shadow);
+    }
+
+    @media screen and (max-width: 1023px) {
+        .container{
+            width: 80%;
+        }
+    }
+
+</style>

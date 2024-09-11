@@ -3,35 +3,44 @@ import { TitleCard, ServiceCard, icon_gear, icon_analisis, icon_web } from '@lib
 ---
 
 <section class="services" id="servicios">
-    <TitleCard title='Nuestros Servicios' side='left'/>
-    <div class="cards">
-        <ServiceCard 
-            src={icon_gear.src} 
-            alt='Icono servicio de sistemas de gestión' 
-            title='Sistemas de gestión' 
-            text='Ofrecemos soluciones personalizadas en Excel para optimizar y automatizar tus procesos de trabajo. Nos aseguramos de que tu gestión y toma de decisiones se vuelva más eficiente.'/>
-        <ServiceCard 
-            src={icon_analisis.src}
-            alt='Icono servicio de analisis'
-            title='Análisis de datos'
-            text='Utilizamos herramientas y tecnicas estadisticas para interpretar datos, identificar tendencias y patrones, y generar informes detallados que te ayudaran en la toma de decisiones.'
-        />
-        <ServiceCard 
-            src={icon_web.src}
-            alt="Icono servicio de desarollo de páginas web"
-            title='Diseño y desarrollo web'
-            text='Impulsamos tu presencia online a traves de sitios web atractivos, funcionales y con una experiencia de usuario agradable. Nos aseguramos que tu sitio web refleje la identidad de tu marca.'
-        />
+    <div class="content">
+        <TitleCard title='Nuestros Servicios' side='left'/>
+        <div class="cards">
+            <ServiceCard 
+                src={icon_gear.src} 
+                alt='Icono servicio de sistemas de gestión' 
+                title='Sistemas de gestión' 
+                text='Ofrecemos soluciones personalizadas en Excel para optimizar y automatizar tus procesos de trabajo. Nos aseguramos de que tu gestión y toma de decisiones se vuelva más eficiente.'/>
+            <ServiceCard 
+                src={icon_analisis.src}
+                alt='Icono servicio de analisis'
+                title='Análisis de datos'
+                text='Utilizamos herramientas y tecnicas estadisticas para interpretar datos, identificar tendencias y patrones, y generar informes detallados que te ayudaran en la toma de decisiones.'
+            />
+            <ServiceCard 
+                src={icon_web.src}
+                alt="Icono servicio de desarollo de páginas web"
+                title='Diseño y desarrollo web'
+                text='Impulsamos tu presencia online a traves de sitios web atractivos, funcionales y con una experiencia de usuario agradable. Nos aseguramos que tu sitio web refleje la identidad de tu marca.'
+            />
+        </div>
     </div>
 </section>
 
 <style>
     .services{
-        max-width: 1480px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 40px 20px;
+        background: var(--title)
+    }
+
+    .content{
+        max-width: 1480px;
         display: flex;
         column-gap: 20px;
-        background: var(--title)
     }
     .cards{
         flex: 1;
@@ -40,17 +49,30 @@ import { TitleCard, ServiceCard, icon_gear, icon_analisis, icon_web } from '@lib
         column-gap: 15px;
     }
 
+    @media screen and (max-width: 1200px) and (min-width: 1024px){
+        .content{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+
     @media screen and (max-width: 1023px){
         .services{
-            padding: 40px 0;
+            padding: 40px 0; 
             flex-direction: column;
-            row-gap: 20px
+        }
+
+        .content{
+            flex-direction: column;
+            row-gap: 20px;
         }
 
         .cards{
             padding: 0 20px;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             row-gap: 20px;
         }
     }

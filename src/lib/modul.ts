@@ -9,6 +9,7 @@ import logo_white from './images/logo_fondo_blanco.webp'
 import logo_green from './images/logo_fondo_verde.webp'
 import hero_image from './images/hero-image.webp'
 import pros_image from './images/foto-acuerdo.webp'
+import gift_image from './images/fondo_plantilla_regalo.webp'
 import contact_image from './images/foto-seccion-contacto.webp'
 import Button from './Button.astro'
 import ServiceCard from './cards/ServiceCard.astro'
@@ -25,6 +26,7 @@ export {
   hero_image,
   pros_image,
   contact_image,
+  gift_image,
   Button,
   ServiceCard,
   TitleCard,

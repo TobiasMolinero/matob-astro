@@ -1,0 +1,39 @@
+---
+import { TitleCard } from "@lib";
+---
+
+<section class="contact" id="contacto">
+    <TitleCard title="Contacto" side="left" />
+    <div class="container">
+        <div class="info">
+            <h3>Información de contacto</h3>
+            <ul class="list">
+                <li class="numbers"></li>
+                <li class="email"></li>
+            </ul>
+        </div>
+        <div class="image">
+            <img src="" alt="Imagen representativa de la sección contacto">
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact{
+        width: 100%;
+        max-width: 1480px;
+        padding: 40px 20px;
+        display: flex;
+        column-gap: 20px;
+    }
+
+    .container{
+        flex: 1;
+        display: flex;
+        background-color: red;
+    }
+
+    .list{
+        list-style: none;
+    }
+</style>
