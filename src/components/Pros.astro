@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+import ventajasMatob from 'src/utils/pros'
 import { TitleCard, icon_check_blue, pros_image } from "@lib";
 ---
 
@@ -8,26 +10,19 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
         <div class="container-image">
             <div class="overlay-image"></div>
             <div class="detail"></div>
-            <img class="image" src={pros_image.src} alt="Foto de la card de lista de ventajas">
+            <Image class="image" src={pros_image} alt="Foto de la card de lista de ventajas" />
         </div>
         <div class="container-list">
             <ul class="list">
-                <li class="list-item">
-                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
-                    Optimizamos tu tiempo agilizando y automatizando las tareas y procesos de tu negocio.
-                </li>
-                <li class="list-item">
-                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos corporis minima, sunt similique illo quod temporibus placeat 
-                </li>
-                <li class="list-item">
-                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos corporis minima, sunt similique illo quod temporibus placeat 
-                </li>
-                <li class="list-item">
-                    <img class="icon" src={icon_check_blue.src} alt="Icono item de lista">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos corporis minima, sunt similique illo quod temporibus placeat 
-                </li>
+                {ventajasMatob.map(ventaja => 
+                    <li class="list-item">
+                        <Image class="icon" src={icon_check_blue} alt="Icono item de lista" />
+                        <p>
+                            <span style="font-weight: 700;">{ventaja.span}</span>
+                            {ventaja.text}
+                        </p>
+                    </li>
+                )}
             </ul>
         </div>
     </div>
@@ -44,7 +39,7 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
 
     .card{
         flex: 1;
-        border-radius: 10px; 
+        border-radius: 10px;
         box-shadow: var(--shadow);
         display: flex;
         height: 450px;
@@ -84,7 +79,7 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
     .container-list{
         padding: 50px 25px 50px 0;
     }
-    .list{ 
+    .list{
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -95,6 +90,7 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
         align-items: center;
         column-gap: 15px;
         color: var(--text);
+        max-width: 1000px;
     }
     .icon{
         width: 20px;
@@ -106,7 +102,7 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
             padding: 40px 0;
             flex-direction: column;
             align-items: end;
-            row-gap: 20px; 
+            row-gap: 20px;
         }
 
         .card{

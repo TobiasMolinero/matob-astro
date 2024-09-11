@@ -1,9 +1,11 @@
 ---
+import { Image } from "astro:assets";
 import { hero_image } from "@lib";
 ---
 
 <div class="container-img" >
-    <img class="img" src={hero_image.src} alt="Imagen representativa de graficos de barra y estadisticas.">
+    <Image class='img' src={hero_image} alt="Imagen representativa de graficos de barra y estadisticas."/>
+    <!-- <img class="img" src={hero_image.src} alt="Imagen representativa de graficos de barra y estadisticas."> -->
     <div class="over-layout"></div>
 </div>
 

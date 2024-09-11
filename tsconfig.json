@@ -4,7 +4,8 @@
     "baseUrl": ".", // Esto establece la base como la raíz del proyecto
     "paths": {
       "@lib": ["src/lib/modul.ts"],
-      "@components": ["src/components/modul.ts"]
+      "@components": ["src/components/modul.ts"],
+      "@services": ["src/utils/services.ts"],
     }
   }
 }

@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props { 
     title: string
-    src: string
+    src: any
     alt: string
     text: string
 }
@@ -9,7 +11,7 @@ interface Props {
 const { title, src, alt, text } = Astro.props
 ---
 <div class="card">
-    <img class="img" src={src} alt={alt}>
+    <Image class="img" src={src} alt={alt} />
     <h3 class="title">{title}</h3>
     <p class="text">{text}</p>
 </div>

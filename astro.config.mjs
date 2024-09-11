@@ -7,7 +7,8 @@ export default defineConfig({
         resolve: {
             alias: {
                 '@lib': resolve('./src/lib/modul.ts'),
-                '@components': resolve('./src/components/modul.ts')
+                '@components': resolve('./src/components/modul.ts'),
+                '@services': resolve('./src/utils/services.ts')
             }
         }
     }
