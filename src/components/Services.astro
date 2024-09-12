@@ -3,10 +3,38 @@ import { TitleCard, ServiceCard } from "@lib";
 import servicios from "@services";
 ---
 
+<script>
+    const servicios = document.getElementById('servicios')
+    const cards = document.getElementById('container-cards')
+
+    function esVisible(){
+        let rect = servicios?.getBoundingClientRect()
+        if (rect) {
+            // Chequear si la mitad del contenedor es visible en la ventana
+            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            let middleOfContainer = rect.top + rect.height / 2;
+            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+        }  
+        return false;
+    }
+
+    function handleScroll(){
+        if(esVisible()){
+            cards?.classList.add('cards-visible')
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    handleScroll()
+</script>
+
 <section class="services" id="servicios">
     <div class="content">
-        <TitleCard title='Nuestros Servicios' side='left'/>
-        <div class="cards">
+        <div class="content-title" id="container-title">
+            <TitleCard title='Nuestros Servicios' side='left'/>
+        </div>
+        <div class="cards" id="container-cards">
             {servicios.map(servicio => 
                 <ServiceCard 
                     src={servicio.src} 
@@ -26,7 +54,8 @@ import servicios from "@services";
         justify-content: center;
         align-items: center;
         padding: 40px 20px;
-        background: var(--title)
+        background: var(--title);
+        overflow-x: hidden;
     }
 
     .content{
@@ -34,11 +63,20 @@ import servicios from "@services";
         display: flex;
         column-gap: 20px;
     }
+
     .cards{
         flex: 1;
         display: flex;
         justify-content: space-between;
         column-gap: 15px;
+        opacity: 0;
+        transform: translateX(800px);
+    }
+
+    .cards-visible{
+        opacity: 1;
+        transform: translateX(0);
+        transition: 1s
     }
 
     @media screen and (max-width: 1200px) and (min-width: 1024px){

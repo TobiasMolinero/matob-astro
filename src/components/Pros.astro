@@ -4,6 +4,32 @@ import ventajasMatob from 'src/utils/pros'
 import { TitleCard, icon_check_blue, pros_image } from "@lib";
 ---
 
+<script>
+    const list = document.getElementById('containerList')
+
+    function esVisible(){
+        let rect = list?.getBoundingClientRect()
+        if (rect) {
+            // Chequear si la mitad del contenedor es visible en la ventana
+            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            let middleOfContainer = rect.top + rect.height / 2;
+            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+        }
+        return false;
+    }
+
+    function handleScroll(){
+        if(esVisible()){
+            list?.classList.add('visible')
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    handleScroll()
+</script>
+
+
 <section class="pros" id="nosotros">
     <TitleCard title='¿Por qué Matob?' side='right'/>
     <div class="card">
@@ -12,7 +38,7 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
             <div class="detail"></div>
             <Image class="image" src={pros_image} alt="Foto de la card de lista de ventajas" />
         </div>
-        <div class="container-list">
+        <div class="container-list" id="containerList">
             <ul class="list">
                 {ventajasMatob.map(ventaja => 
                     <li class="list-item">
@@ -35,6 +61,7 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
         display: flex;
         flex-direction: row-reverse;
         column-gap: 20px;
+        overflow-x: hidden;
     }
 
     .card{
@@ -78,6 +105,13 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
 
     .container-list{
         padding: 50px 25px 50px 0;
+        opacity: 0;
+        transform: translateX(-600px);
+    }
+    .visible{
+        opacity: 1;
+        transform: translateX(0);
+        transition: 1s;
     }
     .list{
         list-style: none;
