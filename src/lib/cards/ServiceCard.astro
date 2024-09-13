@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import { Button, IconArrow } from '@lib'
 
 interface Props { 
     title: string
@@ -14,6 +15,12 @@ const { title, src, alt, text } = Astro.props
     <Image class="img" src={src} alt={alt} />
     <h3 class="title">{title}</h3>
     <p class="text">{text}</p>
+    <div class="container-button">
+        <Button >
+            Ver más
+            <IconArrow width={25} height={25} />
+        </Button>
+    </div>
 </div>
 
 <style>
@@ -43,6 +50,12 @@ const { title, src, alt, text } = Astro.props
     .text{
         color: var(--text);
         text-align: center;
+    }
+
+    .container-button{
+        margin-top: auto;
+        width: 120px;
+        height: 40px;
     }
 
     @media screen and (max-width: 1023px){

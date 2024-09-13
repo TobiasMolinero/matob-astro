@@ -3,8 +3,34 @@ import { HeroImg } from '@components'
 import { Button } from '@lib'
 ---
 
+<script>
+    const heroText: HTMLElement | null = document.getElementById('heroText')
+
+    function esVisible(){
+        let rect = heroText?.getBoundingClientRect()
+        if (rect) {
+            // Chequear si la mitad del contenedor es visible en la ventana
+            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            let middleOfContainer = rect.top + rect.height / 2;
+            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+        }  
+        return false;
+    }
+
+    function handleScroll(){
+        if(esVisible()){
+            heroText?.classList.add('visible')
+        }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    handleScroll()
+
+</script>
+
 <section class="hero">
-    <div class="content" transition:animate="fade">
+    <div class="content" id="heroText">
         <h1 class="title">Impulsá tu negocio al siguiente nivel!</h1>
         <p class="text">Optimizamos tu negocio con sistemas de gestión hechos en excel, y a la medida de tus necesidades. Soluciones eficaces para empresas pequeñas que buscan crecer.</p>
         <div class="container-button">
@@ -19,6 +45,7 @@ import { Button } from '@lib'
 
 <style>
     .hero{
+        max-width: 1480px;
         height: calc(100vh - 60px);
         width: 100%;
         padding-left: 40px;
@@ -35,6 +62,7 @@ import { Button } from '@lib'
         align-items: start;
         justify-content: center;
         row-gap: 20px;
+        opacity: 0;
     }
 
     .title{
@@ -62,6 +90,11 @@ import { Button } from '@lib'
     .hero-img{
         position: relative;
 
+    }
+
+    .visible{
+        opacity: 1;
+        transition: 1.1s;
     }
 
     @media screen and (max-width: 1023px) {

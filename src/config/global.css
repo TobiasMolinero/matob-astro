@@ -54,6 +54,25 @@ html {
   box-sizing: border-box;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:hover svg{
+  fill: var(--bg-button);
+  animation: bounceHorizontal 0.5s infinite alternate;
+}
+
+@keyframes bounceHorizontal {
+  from{
+    transform: translateX(-3px);
+  }
+  to{
+    transform: translateX(3px);
+  }
+}
 
 /* shadow-sm: box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); */
 /* shadow:  0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); */
