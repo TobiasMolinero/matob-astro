@@ -11,16 +11,18 @@ interface Props {
 
 const { title, src, alt, text } = Astro.props
 ---
-<div class="card">
-    <Image class="img" src={src} alt={alt} />
-    <h3 class="title">{title}</h3>
-    <p class="text">{text}</p>
-    <div class="container-button">
-        <Button >
-            Ver más
-            <IconArrow width={25} height={25} />
-        </Button>
-    </div>
+<div class="card" title="Más información">
+    <a href="" class="link">
+        <Image class="img" src={src} alt={alt} />
+        <h3 class="title">{title}</h3>
+        <p class="text">{text}</p>
+        <div class="container-button">
+            <Button>
+                Ver más
+                <IconArrow width={25} height={25} />
+            </Button>
+        </div>
+    </a>
 </div>
 
 <style>
@@ -29,12 +31,21 @@ const { title, src, alt, text } = Astro.props
         height:400px;
         border-radius: 10px;
         box-shadow: var(--shadow);
+        background: var(--background);
+        transition: 0.3s
+    }
+    .card:hover{
+        scale: 1.01;
+    }
+
+    .link{
+        height: 100%;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         row-gap: 20px;
-        padding: 20px;
-        background: var(--background);
+        text-decoration: none;
     }
 
     .img{
