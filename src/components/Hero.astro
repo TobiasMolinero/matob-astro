@@ -4,28 +4,30 @@ import { Button } from '@lib'
 ---
 
 <script>
-    const heroText: HTMLElement | null = document.getElementById('heroText')
-
-    function esVisible(){
-        let rect = heroText?.getBoundingClientRect()
-        if (rect) {
-            // Chequear si la mitad del contenedor es visible en la ventana
-            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-            let middleOfContainer = rect.top + rect.height / 2;
-            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
-        }  
-        return false;
-    }
-
-    function handleScroll(){
-        if(esVisible()){
-            heroText?.classList.add('visible')
+    window.addEventListener('load', () => {
+        const heroText: HTMLElement | null = document.getElementById('heroText')
+    
+        function esVisible(){
+            let rect = heroText?.getBoundingClientRect()
+            if (rect) {
+                // Chequear si la mitad del contenedor es visible en la ventana
+                let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                let middleOfContainer = rect.top + rect.height / 2;
+                return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+            }  
+            return false;
         }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    handleScroll()
+    
+        function handleScroll(){
+            if(esVisible()){
+                heroText?.classList.add('visible')
+            }
+        }
+    
+        window.addEventListener('scroll', handleScroll)
+    
+        handleScroll()
+    })
 
 </script>
 

@@ -7,13 +7,15 @@ interface Props {
     src: any
     alt: string
     text: string
+    has_transition?: boolean
+    transition_name?: string 
 }
 
-const { title, src, alt, text } = Astro.props
+const { title, src, alt, text, has_transition, transition_name } = Astro.props
 ---
-<div class="card" title="Más información">
-    <a href="" class="link">
-        <Image class="img" src={src} alt={alt} />
+<div class="card" title="Más información" >
+    <a href="/gestion" class="link">
+        <Image class="img" src={src} alt={alt} transition:name={has_transition ? transition_name : ''}/>
         <h3 class="title">{title}</h3>
         <p class="text">{text}</p>
         <div class="container-button">

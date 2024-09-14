@@ -3,6 +3,9 @@ import { resolve } from 'path'
 
 // https://astro.build/config
 export default defineConfig({
+    prefetch: {
+        prefetchAll: true
+    },
     vite: {
         resolve: {
             alias: {

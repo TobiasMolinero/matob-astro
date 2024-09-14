@@ -1,0 +1,28 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { icon_gear } from "@lib";
+---
+
+<Layout title="Sistemas de gestión en Excel" >
+    <main class="">
+        <Image transition:name="gestion" class="image" src={icon_gear} alt={'Imagen de un engranaje para representar el servicio de sistemas de gestión'}/>
+        <h1>Sistemas de gestión</h1>
+    </main>
+</Layout>
+
+<style>
+    main{
+        width: 100%;
+        max-width: 1480px;
+        display: flex;
+        justify-content: start;
+        padding: 40px 200px;
+        background: red;
+    }
+
+    .image{
+        width: 350px;
+        height: 350px;
+    }
+</style>

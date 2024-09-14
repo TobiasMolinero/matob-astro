@@ -5,28 +5,31 @@ import { TitleCard, icon_check_blue, pros_image } from "@lib";
 ---
 
 <script>
-    const list = document.getElementById('containerList')
 
-    function esVisible(){
-        let rect = list?.getBoundingClientRect()
-        if (rect) {
-            // Chequear si la mitad del contenedor es visible en la ventana
-            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-            let middleOfContainer = rect.top + rect.height / 2;
-            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+    window.addEventListener('load', () => {
+        const list = document.getElementById('containerList')
+    
+        function esVisible(){
+            let rect = list?.getBoundingClientRect()
+            if (rect) {
+                // Chequear si la mitad del contenedor es visible en la ventana
+                let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                let middleOfContainer = rect.top + rect.height / 2;
+                return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+            }
+            return false;
         }
-        return false;
-    }
-
-    function handleScroll(){
-        if(esVisible()){
-            list?.classList.add('visible')
+    
+        function handleScroll(){
+            if(esVisible()){
+                list?.classList.add('visible')
+            }
         }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    handleScroll()
+    
+        window.addEventListener('scroll', handleScroll)
+    
+        handleScroll()
+    })
 </script>
 
 

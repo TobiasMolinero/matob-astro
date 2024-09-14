@@ -4,29 +4,31 @@ import servicios from "@services";
 ---
 
 <script>
-    const servicios = document.getElementById('servicios')
-    const cards = document.getElementById('container-cards')
-
-    function esVisible(){
-        let rect = servicios?.getBoundingClientRect()
-        if (rect) {
-            // Chequear si la mitad del contenedor es visible en la ventana
-            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-            let middleOfContainer = rect.top + rect.height / 2;
-            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
-        }  
-        return false;
-    }
-
-    function handleScroll(){
-        if(esVisible()){
-            cards?.classList.add('cards-visible')
+    window.addEventListener('load', () => {
+        const servicios = document.getElementById('servicios')
+        const cards = document.getElementById('container-cards')
+    
+        function esVisible(){
+            let rect = servicios?.getBoundingClientRect()
+            if (rect) {
+                // Chequear si la mitad del contenedor es visible en la ventana
+                let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                let middleOfContainer = rect.top + rect.height / 2;
+                return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+            }  
+            return false;
         }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    handleScroll()
+    
+        function handleScroll(){
+            if(esVisible()){
+                cards?.classList.add('cards-visible')
+            }
+        }
+    
+        window.addEventListener('scroll', handleScroll)
+    
+        handleScroll()
+    })
 </script>
 
 <section class="services" id="servicios">
@@ -41,6 +43,8 @@ import servicios from "@services";
                     alt={servicio.alt}
                     title={servicio.title}
                     text={servicio.text}
+                    has_transition={servicio.has_transition}
+                    transition:name={servicio.transition_name}
                 />
             )}
         </div>
