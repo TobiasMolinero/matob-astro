@@ -44,7 +44,6 @@ import { Button, hero_image } from '@lib'
 
 <style>
     .hero{
-        height: calc(100vh - 60px);
         width: 100%;
         padding-left: 40px;
         display: flex;
@@ -86,11 +85,6 @@ import { Button, hero_image } from '@lib'
         width: 80%;
         height: 45px;
     }
-    
-    .hero-img{
-        position: relative;
-
-    }
 
     .visible{
         opacity: 1;
@@ -124,20 +118,11 @@ import { Button, hero_image } from '@lib'
     @media screen and (max-width: 1023px) {
 
         .hero{
-            height: calc(100vh - 60px);
-            background-image: linear-gradient(
-                to bottom,
-                #fefefeb6,
-                #fefefeb6,
-                #fefefedc,
-                #fefefe
-                ),
-                url('/src/lib/images/banner_nos_1.jpg');
-            background-size: cover;
-            background-position: center;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
         }
 
         .content{
@@ -153,6 +138,8 @@ import { Button, hero_image } from '@lib'
             text-align: center;
         }
 
-        .hero-img{display: none}
+        .hero-img{
+            width: 50%;
+        }
     }
 </style>
