@@ -8,8 +8,6 @@ const servicios = [
         src: icon_gear,
         alt: 'Icono servicio de sistemas de gestión',
         link: '',
-        has_transition: true,
-        transition_name: 'gestion'
     },
     {
         ID: 2,
@@ -18,8 +16,6 @@ const servicios = [
         src: icon_analisis,
         alt: 'Icono servicio de analisis',
         link: '',
-        has_transition: true,
-        transition_name: 'analisis'
     },
     {
         ID: 3,
@@ -28,8 +24,6 @@ const servicios = [
         src: icon_web,
         alt: "Icono servicio de desarollo de páginas web",
         link: '',
-        has_transition: true,
-        transition_name: 'desarrollo-web'
     }
 ]
 

@@ -1,33 +1,31 @@
 ---
 import { HeroImg } from '@components'
-import { Button } from '@lib'
+import { Button, hero_image } from '@lib'
 ---
 
 <script>
-    window.addEventListener('load', () => {
-        const heroText: HTMLElement | null = document.getElementById('heroText')
-    
-        function esVisible(){
-            let rect = heroText?.getBoundingClientRect()
-            if (rect) {
-                // Chequear si la mitad del contenedor es visible en la ventana
-                let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-                let middleOfContainer = rect.top + rect.height / 2;
-                return middleOfContainer <= windowHeight && middleOfContainer >= 0;
-            }  
-            return false;
+    const heroText: HTMLElement | null = document.getElementById('heroText')
+
+    function esVisible(){
+        let rect = heroText?.getBoundingClientRect()
+        if (rect) {
+            // Chequear si la mitad del contenedor es visible en la ventana
+            let windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            let middleOfContainer = rect.top + rect.height / 2;
+            return middleOfContainer <= windowHeight && middleOfContainer >= 0;
+        }  
+        return false;
+    }
+
+    function handleScroll(){
+        if(esVisible()){
+            heroText?.classList.add('visible')
         }
-    
-        function handleScroll(){
-            if(esVisible()){
-                heroText?.classList.add('visible')
-            }
-        }
-    
-        window.addEventListener('scroll', handleScroll)
-    
-        handleScroll()
-    })
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    handleScroll()
 
 </script>
 
@@ -37,11 +35,10 @@ import { Button } from '@lib'
         <p class="text">Optimizamos tu negocio con sistemas de gestión hechos en excel, y a la medida de tus necesidades. Soluciones eficaces para empresas pequeñas que buscan crecer.</p>
         <div class="container-button">
             <Button > Quiero saber más!</Button>
-            <!-- <button class="button">Quiero saber más</button> -->
         </div>
     </div>
     <div class="hero-img">
-        <HeroImg/>
+        <HeroImg src={hero_image}/>
     </div>
 </section>
 
