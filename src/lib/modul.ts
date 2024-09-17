@@ -16,6 +16,8 @@ import hero_image from './images/Spreadsheets-amico.svg'
 import pros_image from './images/foto-acuerdo.webp'
 import gift_image from './images/fondo_plantilla_regalo.webp'
 import contact_image from './images/Contact us-amico.svg'
+import soon_image from './images/Website setup-amico.svg'
+import not_found_image from './images/404 Error-amico.svg'
 import Button from './Button.astro'
 import ServiceCard from './cards/ServiceCard.astro'
 import TitleCard from './cards/TitleCard.astro'
@@ -42,4 +44,6 @@ export {
   WhatsappIcon,
   MailIcon,
   IconInstagram,
+  soon_image,
+  not_found_image
 }
