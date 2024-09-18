@@ -1,0 +1,51 @@
+---
+import { HeroImg } from "@components";
+import { hero_image, Title } from "@lib";
+---
+
+<section class="hero">
+    <div class="container">
+        <div class="container-image">
+            <HeroImg src={hero_image} alt="Imagen Hero para página sobre el servicio 'Sistemas de gestón'"/>
+        </div>
+        <div>
+            <Title class="title">Sistemas de gestión</Title>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero{
+        width: 100%;
+        height: 100vh
+    }
+
+    .container{
+        max-width: 1480px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container > div{ 
+        flex: 1;
+    }
+
+    @media screen and (max-width: 1023px) {
+
+        .hero{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .title{
+            text-align: center;
+        }
+    }
+</style>

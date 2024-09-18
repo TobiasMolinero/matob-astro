@@ -1,18 +1,16 @@
 ---
+import { HeroSystem } from "@components";
 import Layout from "src/layouts/Layout.astro";
-import { Soon } from '@components'
-// import { Image } from "astro:assets";
-// import { icon_gear } from "@lib";
 ---
 
-<Layout title="Sistemas de gestión en Excel" header={false} footer={false}>
-    <main class="">
-        <Soon />
+<Layout title="Sistemas de gestión en Excel" header={true} footer={true}>
+    <main class="main">
+    <HeroSystem />
     </main>
 </Layout>
 
 <style>
-    main{
+    .main{
         width: 100%;
     }
 </style>

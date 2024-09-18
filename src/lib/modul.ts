@@ -21,6 +21,7 @@ import not_found_image from './images/404 Error-amico.svg'
 import Button from './Button.astro'
 import ServiceCard from './cards/ServiceCard.astro'
 import TitleCard from './cards/TitleCard.astro'
+import Title from './Title.astro'
 
 export {
   icon_gear,
@@ -45,5 +46,6 @@ export {
   MailIcon,
   IconInstagram,
   soon_image,
-  not_found_image
+  not_found_image,
+  Title
 }

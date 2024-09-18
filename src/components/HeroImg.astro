@@ -3,13 +3,14 @@ import { Image } from "astro:assets";
 
 interface Props {
     src: ImageMetadata
+    alt: string
 }
 
-const { src } = Astro.props
+const { src, alt } = Astro.props
 ---
 
 <div class="container-img" >
-    <Image class='img' src={src} alt="Imagen representativa de graficos de barra y estadisticas."/>
+    <Image class='img' src={src} alt={alt}/>
 </div>
 
 <style>

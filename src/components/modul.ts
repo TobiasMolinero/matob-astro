@@ -8,6 +8,7 @@ import Contact from './Contact.astro'
 import DropDownNav from './DropDownNav.astro'
 import Footer from './Footer.astro'
 import Soon from './Soon.astro'
+import HeroSystem from './HeroSystem.astro'
 
 export {
     Header,
@@ -20,4 +21,5 @@ export {
     DropDownNav,
     Footer,
     Soon,
+    HeroSystem,
 }
