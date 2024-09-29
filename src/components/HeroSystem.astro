@@ -5,11 +5,11 @@ import { hero_image, Title } from "@lib";
 
 <section class="hero">
     <div class="container">
+        <div class="title">
+            <Title>Sistemas de gestión</Title>
+        </div>
         <div class="container-image">
             <HeroImg src={hero_image} alt="Imagen Hero para página sobre el servicio 'Sistemas de gestón'"/>
-        </div>
-        <div>
-            <Title class="title">Sistemas de gestión</Title>
         </div>
     </div>
 </section>
@@ -30,6 +30,11 @@ import { hero_image, Title } from "@lib";
         flex: 1;
     }
 
+    .title{
+        text-align: center;
+    }
+
+
     @media screen and (max-width: 1023px) {
 
         .hero{
@@ -39,13 +44,9 @@ import { hero_image, Title } from "@lib";
         }
 
         .container{
-            flex-direction: column-reverse;
+            flex-direction: column;
             align-items: center;
             gap: 20px;
-        }
-
-        .title{
-            text-align: center;
         }
     }
 </style>
