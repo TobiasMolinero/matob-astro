@@ -30,8 +30,8 @@
 
 :root {
   scroll-behavior: smooth;
-  /* scrollbar-width: thin; */
-  /* scrollbar-color: var(--bg-button) transparent; */
+  scrollbar-width: thin;
+  scrollbar-color: var(--title) transparent;
   --title: rgb(0, 62, 66);
   --bg-button: rgb(227, 255, 227);
   --text: rgb(110, 110, 110);
@@ -43,7 +43,7 @@
 }
 
 html {
-  
+
   font-family: 'Lato';
   background: var(--background);
 }
