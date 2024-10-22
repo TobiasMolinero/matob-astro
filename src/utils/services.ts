@@ -4,7 +4,7 @@ const servicios = [
     {
         ID: 1,
         title: 'Sistemas de gestión' ,
-        text: 'Ofrecemos soluciones personalizadas en Excel para optimizar y automatizar tus procesos de trabajo. Nos aseguramos de que tu gestión y toma de decisiones se vuelva más eficiente.',
+        text: 'Ofrecemos soluciones personalizadas en Excel y Hojas de cálculos de Google para optimizar y automatizar tus procesos de trabajo. Nos aseguramos de que tu gestión y toma de decisiones se vuelva más eficiente.',
         src: icon_gear,
         alt: 'Icono servicio de sistemas de gestión',
         link: '',
